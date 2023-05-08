@@ -9,3 +9,295 @@ El miguelito
 Hoy es el bueno!
 
 Ya creamos el proyecto
+
+
+
+
+root@ninja:~# nano /etc/netplan/
+10-plesk.yaml          50-cloud-init.yaml     50-cloud-init.yaml.bk
+root@ninja:~# nano /etc/netplan/50-cloud-init.yaml
+root@ninja:~# cat /etc/netplan/50-cloud-init.yaml
+# This file is generated from information provided by
+# the datasource.  Changes to it will not persist across an instance.
+# To disable cloud-init's network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        ens160:
+            addresses:
+            - 172.16.21.108/24
+            gateway4: 172.16.21.1
+#       dhcp4: no
+            nameservers:
+                addresses:
+                - 8.8.8.8
+    version: 2
+    root@ninja:/etc/netplan# cat 50-cloud-init.yaml
+    # This file is generated from information provided by
+    # the datasource.  Changes to it will not persist across an instance.
+    # To disable cloud-init's network configuration capabilities, write a file
+    # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+    # network: {config: disabled}
+    network:
+        ethernets:
+            ens160:
+                addresses:
+                - 172.16.21.108/24
+                gateway4: 172.16.21.1
+    #       dhcp4: no
+                nameservers:
+                    addresses: [8.8.4.4,8.8.8.8]
+
+        version: 2
+
+
+        alt-curl alt-libcurl alt-libicu alt-libicu57 alt-libsqlite-0 alt-libzip alt-pcre alt-pdflib-lite alt-php-libc-client alt-php56-bcmath alt-php56-common alt-php56-dba alt-php56-enchant alt-php56-firebird alt-php56-gd
+         alt-php56-imap alt-php56-intl alt-php56-ldap alt-php56-mbstring alt-php56-mcrypt alt-php56-mysqlnd alt-php56-odbc alt-php56-pdo alt-php56-pgsql alt-php56-process alt-php56-pspell alt-php56-snmp alt-php56-soap alt-php56-sybase
+         alt-php56-tidy alt-php56-xml alt-php56-xmlrpc alt-php70-bcmath alt-php70-common alt-php70-dba alt-php70-enchant alt-php70-firebird alt-php70-gd alt-php70-imap alt-php70-intl alt-php70-ldap alt-php70-mbstring alt-php70-mcrypt
+         alt-php70-mysqlnd alt-php70-odbc alt-php70-opcache alt-php70-pdo alt-php70-pgsql alt-php70-process alt-php70-pspell alt-php70-snmp alt-php70-soap alt-php70-tidy alt-php70-xml alt-php70-xmlrpc alt-php71-bcmath alt-php71-common
+         alt-php71-dba alt-php71-enchant alt-php71-firebird alt-php71-gd alt-php71-imap alt-php71-intl alt-php71-ldap alt-php71-mbstring alt-php71-mcrypt alt-php71-mysqlnd alt-php71-odbc alt-php71-opcache alt-php71-pdo alt-php71-pgsql
+         alt-php71-process alt-php71-pspell alt-php71-snmp alt-php71-soap alt-php71-tidy alt-php71-xml alt-php71-xmlrpc alt-php72-bcmath alt-php72-common alt-php72-dba alt-php72-enchant alt-php72-firebird alt-php72-gd alt-php72-imap
+         alt-php72-intl alt-php72-ldap alt-php72-mbstring alt-php72-mysqlnd alt-php72-odbc alt-php72-opcache alt-php72-pdo alt-php72-pgsql alt-php72-process alt-php72-pspell alt-php72-snmp alt-php72-soap alt-php72-sodium
+         alt-php72-tidy alt-php72-xml alt-php72-xmlrpc alt-php73-bcmath alt-php73-common alt-php73-dba alt-php73-enchant alt-php73-firebird alt-php73-gd alt-php73-imap alt-php73-intl alt-php73-ldap alt-php73-mbstring alt-php73-mysqlnd
+         alt-php73-odbc alt-php73-opcache alt-php73-pdo alt-php73-pgsql alt-php73-process alt-php73-pspell alt-php73-snmp alt-php73-soap alt-php73-sodium alt-php73-tidy alt-php73-xml alt-php73-xmlrpc alt-py35-libprotobuf10
+         alt-python35 alt-python35-aiodns alt-python35-aiohttp alt-python35-asn1crypto alt-python35-async-timeout alt-python35-attrs alt-python35-babel alt-python35-blinker alt-python35-cached-property alt-python35-cerberus
+         alt-python35-certifi alt-python35-cffi alt-python35-chardet alt-python35-click alt-python35-cryptography alt-python35-daemon alt-python35-dateutil alt-python35-funcsigs alt-python35-geoip2 alt-python35-humanize
+         alt-python35-idna alt-python35-jinja2 alt-python35-jsonschema alt-python35-libs alt-python35-lockfile alt-python35-markupsafe alt-python35-maxminddb alt-python35-mock alt-python35-multidict alt-python35-packaging
+         alt-python35-pam alt-python35-pbr alt-python35-peewee alt-python35-peewee-migrate alt-python35-pip alt-python35-protobuf alt-python35-psutil alt-python35-pycares alt-python35-pycrypto alt-python35-pyjwt alt-python35-pymysql
+         alt-python35-pyparsing alt-python35-pyrsistent alt-python35-pysocks alt-python35-pytricia alt-python35-pytz alt-python35-raven alt-python35-requests alt-python35-sdnotify alt-python35-sentry-sdk alt-python35-setuptools
+         alt-python35-six alt-python35-urllib3 alt-python35-yaml alt-python35-yarl alt-sqlite clamav clamav-base clamav-freshclam cloudlinux-backup-utils firebird3.0-common firebird3.0-common-doc freetds-bin freetds-common
+         imunify360-modsec-sdbm-util imunify360-ossec imunify360-ossec-server imunify360-php-i360 imunify360-php-i360-rules imunify360-webshield-bundle imunify360-webshield-modsecurity imunify360-webshield-openssl
+         imunify360-webshield-pcre imunify360-webshield-zlib libaec0 libatomic-ops-dev libcdt5 libcfitsio5 libcgraph6 libclamav9 libct4 libfbclient2 libgail-common libgail18 libgeos-3.6.2 libgeos-c1v5 libgfortran4 libgif7 libgpgme11
+         libgraphicsmagick-q16-3 libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libgts-0.7-5 libgts-bin libgvc6 libhdf5-100 libinotifytools0 libleveldb1v5 libllvm3.9 libmatio4 libmemcached11 libopenjp2-7 libopenslide0 libpathplan4
+         libprotobuf-c1 libsnappy1v5 libssh2-1 libsybdb5 libsz2 libtfm1 libtommath1 libvips42 libwebp-dev libwebpmux3 libyajl2 nip2 tmpreaper
+
+         root@ninja:/etc/netplan# sudo apt-get install build-essential gcc
+         Reading package lists... Done
+         Building dependency tree
+         Reading state information... Done
+         build-essential is already the newest version (12.4ubuntu1).
+         gcc is already the newest version (4:7.4.0-1ubuntu2.3).
+         The following packages were automatically installed and are no longer required:
+           alt-curl alt-libcurl alt-libicu alt-libicu57 alt-libsqlite-0 alt-libzip alt-pcre alt-pdflib-lite alt-php-libc-client alt-php56-bcmath alt-php56-common alt-php56-dba alt-php56-enchant alt-php56-firebird alt-php56-gd
+           alt-php56-imap alt-php56-intl alt-php56-ldap alt-php56-mbstring alt-php56-mcrypt alt-php56-mysqlnd alt-php56-odbc alt-php56-pdo alt-php56-pgsql alt-php56-process alt-php56-pspell alt-php56-snmp alt-php56-soap alt-php56-sybase
+           alt-php56-tidy alt-php56-xml alt-php56-xmlrpc alt-php70-bcmath alt-php70-common alt-php70-dba alt-php70-enchant alt-php70-firebird alt-php70-gd alt-php70-imap alt-php70-intl alt-php70-ldap alt-php70-mbstring alt-php70-mcrypt
+           alt-php70-mysqlnd alt-php70-odbc alt-php70-opcache alt-php70-pdo alt-php70-pgsql alt-php70-process alt-php70-pspell alt-php70-snmp alt-php70-soap alt-php70-tidy alt-php70-xml alt-php70-xmlrpc alt-php71-bcmath alt-php71-common
+           alt-php71-dba alt-php71-enchant alt-php71-firebird alt-php71-gd alt-php71-imap alt-php71-intl alt-php71-ldap alt-php71-mbstring alt-php71-mcrypt alt-php71-mysqlnd alt-php71-odbc alt-php71-opcache alt-php71-pdo alt-php71-pgsql
+           alt-php71-process alt-php71-pspell alt-php71-snmp alt-php71-soap alt-php71-tidy alt-php71-xml alt-php71-xmlrpc alt-php72-bcmath alt-php72-common alt-php72-dba alt-php72-enchant alt-php72-firebird alt-php72-gd alt-php72-imap
+           alt-php72-intl alt-php72-ldap alt-php72-mbstring alt-php72-mysqlnd alt-php72-odbc alt-php72-opcache alt-php72-pdo alt-php72-pgsql alt-php72-process alt-php72-pspell alt-php72-snmp alt-php72-soap alt-php72-sodium
+           alt-php72-tidy alt-php72-xml alt-php72-xmlrpc alt-php73-bcmath alt-php73-common alt-php73-dba alt-php73-enchant alt-php73-firebird alt-php73-gd alt-php73-imap alt-php73-intl alt-php73-ldap alt-php73-mbstring alt-php73-mysqlnd
+           alt-php73-odbc alt-php73-opcache alt-php73-pdo alt-php73-pgsql alt-php73-process alt-php73-pspell alt-php73-snmp alt-php73-soap alt-php73-sodium alt-php73-tidy alt-php73-xml alt-php73-xmlrpc alt-py35-libprotobuf10
+           alt-python35 alt-python35-aiodns alt-python35-aiohttp alt-python35-asn1crypto alt-python35-async-timeout alt-python35-attrs alt-python35-babel alt-python35-blinker alt-python35-cached-property alt-python35-cerberus
+           alt-python35-certifi alt-python35-cffi alt-python35-chardet alt-python35-click alt-python35-cryptography alt-python35-daemon alt-python35-dateutil alt-python35-funcsigs alt-python35-geoip2 alt-python35-humanize
+           alt-python35-idna alt-python35-jinja2 alt-python35-jsonschema alt-python35-libs alt-python35-lockfile alt-python35-markupsafe alt-python35-maxminddb alt-python35-mock alt-python35-multidict alt-python35-packaging
+           alt-python35-pam alt-python35-pbr alt-python35-peewee alt-python35-peewee-migrate alt-python35-pip alt-python35-protobuf alt-python35-psutil alt-python35-pycares alt-python35-pycrypto alt-python35-pyjwt alt-python35-pymysql
+           alt-python35-pyparsing alt-python35-pyrsistent alt-python35-pysocks alt-python35-pytricia alt-python35-pytz alt-python35-raven alt-python35-requests alt-python35-sdnotify alt-python35-sentry-sdk alt-python35-setuptools
+           alt-python35-six alt-python35-urllib3 alt-python35-yaml alt-python35-yarl alt-sqlite clamav clamav-base clamav-freshclam cloudlinux-backup-utils firebird3.0-common firebird3.0-common-doc freetds-bin freetds-common
+           imunify360-modsec-sdbm-util imunify360-ossec imunify360-ossec-server imunify360-php-i360 imunify360-php-i360-rules imunify360-webshield-bundle imunify360-webshield-modsecurity imunify360-webshield-openssl
+           imunify360-webshield-pcre imunify360-webshield-zlib libaec0 libatomic-ops-dev libcdt5 libcfitsio5 libcgraph6 libclamav9 libct4 libfbclient2 libgail-common libgail18 libgeos-3.6.2 libgeos-c1v5 libgfortran4 libgif7 libgpgme11
+           libgraphicsmagick-q16-3 libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libgts-0.7-5 libgts-bin libgvc6 libhdf5-100 libinotifytools0 libleveldb1v5 libllvm3.9 libmatio4 libmemcached11 libopenjp2-7 libopenslide0 libpathplan4
+           libprotobuf-c1 libsnappy1v5 libssh2-1 libsybdb5 libsz2 libtfm1 libtommath1 libvips42 libwebp-dev libwebpmux3 libyajl2 nip2 tmpreaper
+         Use 'sudo apt autoremove' to remove them.
+         0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+         root@ninja:/etc/netplan# sudo apt autoremove
+         Reading package lists... Done
+         Building dependency tree
+         Reading state information... Done
+         The following packages will be REMOVED:
+           alt-curl alt-libcurl alt-libicu alt-libicu57 alt-libsqlite-0 alt-libzip alt-pcre alt-pdflib-lite alt-php-libc-client alt-php56-bcmath alt-php56-common alt-php56-dba alt-php56-enchant alt-php56-firebird alt-php56-gd
+           alt-php56-imap alt-php56-intl alt-php56-ldap alt-php56-mbstring alt-php56-mcrypt alt-php56-mysqlnd alt-php56-odbc alt-php56-pdo alt-php56-pgsql alt-php56-process alt-php56-pspell alt-php56-snmp alt-php56-soap alt-php56-sybase
+           alt-php56-tidy alt-php56-xml alt-php56-xmlrpc alt-php70-bcmath alt-php70-common alt-php70-dba alt-php70-enchant alt-php70-firebird alt-php70-gd alt-php70-imap alt-php70-intl alt-php70-ldap alt-php70-mbstring alt-php70-mcrypt
+           alt-php70-mysqlnd alt-php70-odbc alt-php70-opcache alt-php70-pdo alt-php70-pgsql alt-php70-process alt-php70-pspell alt-php70-snmp alt-php70-soap alt-php70-tidy alt-php70-xml alt-php70-xmlrpc alt-php71-bcmath alt-php71-common
+           alt-php71-dba alt-php71-enchant alt-php71-firebird alt-php71-gd alt-php71-imap alt-php71-intl alt-php71-ldap alt-php71-mbstring alt-php71-mcrypt alt-php71-mysqlnd alt-php71-odbc alt-php71-opcache alt-php71-pdo alt-php71-pgsql
+           alt-php71-process alt-php71-pspell alt-php71-snmp alt-php71-soap alt-php71-tidy alt-php71-xml alt-php71-xmlrpc alt-php72-bcmath alt-php72-common alt-php72-dba alt-php72-enchant alt-php72-firebird alt-php72-gd alt-php72-imap
+           alt-php72-intl alt-php72-ldap alt-php72-mbstring alt-php72-mysqlnd alt-php72-odbc alt-php72-opcache alt-php72-pdo alt-php72-pgsql alt-php72-process alt-php72-pspell alt-php72-snmp alt-php72-soap alt-php72-sodium
+           alt-php72-tidy alt-php72-xml alt-php72-xmlrpc alt-php73-bcmath alt-php73-common alt-php73-dba alt-php73-enchant alt-php73-firebird alt-php73-gd alt-php73-imap alt-php73-intl alt-php73-ldap alt-php73-mbstring alt-php73-mysqlnd
+           alt-php73-odbc alt-php73-opcache alt-php73-pdo alt-php73-pgsql alt-php73-process alt-php73-pspell alt-php73-snmp alt-php73-soap alt-php73-sodium alt-php73-tidy alt-php73-xml alt-php73-xmlrpc alt-py35-libprotobuf10
+           alt-python35 alt-python35-aiodns alt-python35-aiohttp alt-python35-asn1crypto alt-python35-async-timeout alt-python35-attrs alt-python35-babel alt-python35-blinker alt-python35-cached-property alt-python35-cerberus
+           alt-python35-certifi alt-python35-cffi alt-python35-chardet alt-python35-click alt-python35-cryptography alt-python35-daemon alt-python35-dateutil alt-python35-funcsigs alt-python35-geoip2 alt-python35-humanize
+           alt-python35-idna alt-python35-jinja2 alt-python35-jsonschema alt-python35-libs alt-python35-lockfile alt-python35-markupsafe alt-python35-maxminddb alt-python35-mock alt-python35-multidict alt-python35-packaging
+           alt-python35-pam alt-python35-pbr alt-python35-peewee alt-python35-peewee-migrate alt-python35-pip alt-python35-protobuf alt-python35-psutil alt-python35-pycares alt-python35-pycrypto alt-python35-pyjwt alt-python35-pymysql
+           alt-python35-pyparsing alt-python35-pyrsistent alt-python35-pysocks alt-python35-pytricia alt-python35-pytz alt-python35-raven alt-python35-requests alt-python35-sdnotify alt-python35-sentry-sdk alt-python35-setuptools
+           alt-python35-six alt-python35-urllib3 alt-python35-yaml alt-python35-yarl alt-sqlite clamav clamav-base clamav-freshclam cloudlinux-backup-utils firebird3.0-common firebird3.0-common-doc freetds-bin freetds-common
+           imunify360-modsec-sdbm-util imunify360-ossec imunify360-ossec-server imunify360-php-i360 imunify360-php-i360-rules imunify360-webshield-bundle imunify360-webshield-modsecurity imunify360-webshield-openssl
+           imunify360-webshield-pcre imunify360-webshield-zlib libaec0 libatomic-ops-dev libcdt5 libcfitsio5 libcgraph6 libclamav9 libct4 libfbclient2 libgail-common libgail18 libgeos-3.6.2 libgeos-c1v5 libgfortran4 libgif7 libgpgme11
+           libgraphicsmagick-q16-3 libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libgts-0.7-5 libgts-bin libgvc6 libhdf5-100 libinotifytools0 libleveldb1v5 libllvm3.9 libmatio4 libmemcached11 libopenjp2-7 libopenslide0 libpathplan4
+           libprotobuf-c1 libsnappy1v5 libssh2-1 libsybdb5 libsz2 libtfm1 libtommath1 libvips42 libwebp-dev libwebpmux3 libyajl2 nip2 tmpreaper
+         0 upgraded, 0 newly installed, 243 to remove and 6 not upgraded.
+         After this operation, 419 MB disk space will be freed.
+         Do you want to continue? [Y/n] Y
+
+
+
+
+./configure
+--with-apxs2=/usr/local/apache/bin/apxs
+--with-mysql=MySQL_LOCATION/mysql
+--prefix=/usr/local/apache/php
+--with-config-file-path=/usr/local/apache/php
+--disable-cgi
+--with-zlib
+--with-gettext
+--with-gdbm
+--with-curl
+--enable-zip
+--with-xml
+--with-json
+--enable-shmo
+
+./configure
+--prefix=/opt/plesk/php/5.4.45
+--bindir=/opt/plesk/php/5.4.45/bin
+--sbindir=/opt/plesk/php/5.4.45/sbin
+--libexecdir=/opt/plesk/php/5.4.45/lib
+--datadir=/opt/plesk/php/5.4.45/share
+--sysconfdir=/opt/plesk/php/5.4.45/etc
+--sharedstatedir=/opt/plesk/php/5.4.45/com
+--localstatedir=/opt/plesk/php/5.4.45/var
+--libdir=/opt/plesk/php/5.4.45/lib/x86_64-linux-gnu
+--includedir=/opt/plesk/php/5.4.45/include
+--infodir=/opt/plesk/php/5.4.45/share/info
+--mandir=/opt/plesk/php/5.4.45/share/man
+--build=x86_64-linux-gnu
+--host=x86_64-linux-gnu
+--with-libdir=lib
+--cache-file=../config.cache
+--with-config-file-path=/opt/plesk/php/5.4.45/etc
+--with-config-file-scan-dir=/opt/plesk/php/5.4.45/etc/php.d
+--disable-debug
+--enable-gd-native-ttf
+--without-gdbm
+--enable-ftp
+--enable-sockets
+--enable-sysvsem
+--enable-sysvshm
+--enable-sysvmsg
+--with-kerberos
+--enable-calendar
+--enable-xml
+--enable-phpdbg
+--with-enchant=shared,/usr
+--with-litespeed
+--enable-pcntl
+--with-imap=shared
+--with-imap-ssl
+--enable-mbstring=shared
+--enable-mbregex
+--with-gd=shared
+--enable-bcmath=shared
+--enable-dba=shared
+--with-xmlrpc=shared
+--enable-mysqlnd=shared
+--with-mysql=shared,mysqlnd
+--with-mysqli=shared,mysqlnd
+--with-mysql-sock=/var/run/mysqld/mysqld.sock
+--enable-dom=shared
+--enable-soap=shared
+--with-xsl=shared,/usr
+--enable-xmlreader=shared
+--enable-xmlwriter=shared
+--with-curl=shared,/usr
+--enable-pdo=shared
+--with-pdo-odbc=shared,unixODBC,/usr
+--with-pdo-mysql=shared,mysqlnd
+--with-pdo-sqlite=shared,/usr
+--with-sqlite3=shared
+--enable-json=shared
+--enable-zip=shared
+--without-readline
+--with-libedit
+--enable-phar=shared
+--with-mcrypt=shared,/usr
+--with-tidy=shared,/usr
+--with-unixODBC=shared,/usr
+--enable-fileinfo=shared
+--enable-intl=shared
+--with-icu-dir=/usr
+--enable-sysvmsg=shared
+--enable-sysvshm=shared
+--enable-sysvsem=shared
+--enable-posix=shared
+
+
+/usr/local/psa/bin/php_handler --add
+-displayname 5.6.40
+-path /opt/plesk/php/5.6.40/bin/php-cgi
+-phpini /opt/plesk/php/5.6.40/etc/php.ini
+-type fastcgi
+-id 5.6.40
+-clipath /opt/plesk/php/5.6.40/bin/php
+
+
+
+/usr/local/psa/bin/php_handler --add
+-displayname php5.4-custom
+-path /opt/plesk/php/5.4.45/bin/php-cgi
+-phpini /opt/plesk/php/5.4.45/etc/php.ini
+-type fastcgi
+-id 5.4-custom
+-clipath /opt/plesk/php/5.4.45/bin/
+
+
+directivas adcionales
+mvc.ocqa.open
+
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ioncube_loader_lin_5.4.so
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ZendGuardLoader.so
+zend_loader.enable=1
+auto_prepend_file = /var/www/vhosts/ocqa.open-eb.io/httpdocs/pruebas/opencomex/config/apf.php
+extension=phpchartdir540.dll
+max_input_vars=10000
+
+
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ioncube_loader_lin_5.4.so
+
+ocqa.open
+
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ioncube_loader_lin_5.4.so
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ZendGuardLoader.so
+zend_loader.enable=1
+auto_prepend_file = /var/www/vhosts/ocqa.open-eb.io/httpdocs/pruebas/opencomex/config/apf.php
+extension=phpchartdir530.dll
+max_input_vars=10000
+
+/usr/local/psa/bin/php_handler --update -displayname php5.4-custom  -path /opt/plesk/php/5.4.45/bin/php-cgi -phpini /opt/plesk/php/5.4.45/etc/php.ini -type fastcgi -id 5.4.45 -clipath /opt/plesk/php/5.4.45/bin/php
+
+
+
+
+
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/opcache.so
+
+
+
+
+
+
+
+
+TRACKING
+
+INCLUDE PATH   .:/opt/plesk/php/5.4.45/pear:/usr/local/zend/var/libraries/ZendFramework-1.12.20/library
+
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ioncube_loader_lin_5.4.so
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ZendGuardLoader.so
+zend_loader.enable=1
+max_input_vars=10000
+
+
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ioncube_loader_lin_5.4.so
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ZendGuardLoader.so
+zend_loader.enable=1
+max_input_vars=10000
+=============================
+=============================
+=============================
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ioncube_loader_lin_5.4.so
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ZendGuardLoader.so
+zend_extension = /opt/plesk/php/5.4.45/lib/x86_64-linux-gnu/extensions/no-debug-non-zts-20100525/ioncube_loader_lin_5.4.so
+
+=============================
+=============================
+=============================
+printf "zend_extension=opcache.so\nextension=mysqlnd.so\nextension=bcmath.so\nextension=curl.so\nextension=dba.so\nextension=dom.so\nextension=enchant.so\nextension=fileinfo.so\nextension=gd.so\nextension=imap.so\nextension=intl.so\nextension=json.so\nextension=mbstring.so\nextension=mcrypt.so\nextension=mysql.so\nextension=mysqli.so\nextension=odbc.so\nextension=pdo.so\nextension=pdo_mysql.so\nextension=pdo_odbc.so\nextension=pdo_sqlite.so\nextension=phar.so\nextension=posix.so\nextension=soap.so\nextension=sqlite3.so\nextension=sysvmsg.so\nextension=sysvsem.so\nextension=sysvshm.so\nextension=tidy.so\nextension=xmlreader.so\nextension=xmlrpc.so\nextension=xmlwriter.so\nextension=xsl.so\nextension=zip.so" >> /opt/plesk/php/5.4.45/etc/php.ini
